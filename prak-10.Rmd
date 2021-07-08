@@ -60,6 +60,17 @@ preise <- read_csv("data/supermarkt/preise.csv")
 
 ```{r}
 
+names(einkaeufe)
+names(kundenprofile)
+names(preise)
+
+nrow(einkaeufe)
+nrow(kundenprofile)
+nrow(preise)
+
+glimpse (einkaeufe)
+glimpse (kundenprofile)
+glimpse (preise)
 
 ```
 

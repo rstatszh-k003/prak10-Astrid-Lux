@@ -286,10 +286,50 @@ preise &lt;- read_csv(&quot;data/supermarkt/preise.csv&quot;)</code></pre>
 <div id="übung-2---daten-erkunden" class="section level2">
 <h2>Übung 2 - Daten erkunden</h2>
 <ol style="list-style-type: decimal">
-<li><p>Nutze die Funktion <code>names()</code> für jeden Dataframe um die Spaltennamen zu erkunden. Über welche Variablen können die Daten zusammengefügt werden?</p></li>
-<li><p>Nutze die Funktion <code>nrow()</code> für jeden Dataframe um die Anzahl Reihen zu identifizieren.</p></li>
-<li><p>Nutze andere Funktionen die dir bekannt sind um die drei Dataframes zu erkunden</p></li>
-<li><p>Strick das Dokument und dann: git add, commit, push alle Veränderung zurück auf GitHub</p></li>
+<li>Nutze die Funktion <code>names()</code> für jeden Dataframe um die Spaltennamen zu erkunden. Über welche Variablen können die Daten zusammengefügt werden?</li>
+<li>Nutze die Funktion <code>nrow()</code> für jeden Dataframe um die Anzahl Reihen zu identifizieren.</li>
+<li>Nutze andere Funktionen die dir bekannt sind um die drei Dataframes zu erkunden</li>
+</ol>
+<pre class="r"><code>names(einkaeufe)</code></pre>
+<pre><code>## [1] &quot;kunden_id&quot;    &quot;produkt_name&quot; &quot;einkauf&quot;      &quot;einheit&quot;</code></pre>
+<pre class="r"><code>names(kundenprofile)</code></pre>
+<pre><code>##  [1] &quot;kunden_id&quot;  &quot;email&quot;      &quot;phone&quot;      &quot;vorname&quot;    &quot;nachname&quot;  
+##  [6] &quot;wohnort&quot;    &quot;kanton&quot;     &quot;plz&quot;        &quot;geburtstag&quot; &quot;alter&quot;</code></pre>
+<pre class="r"><code>names(preise)</code></pre>
+<pre><code>## [1] &quot;produkt_name&quot; &quot;preis&quot;</code></pre>
+<pre class="r"><code>nrow(einkaeufe)</code></pre>
+<pre><code>## [1] 9</code></pre>
+<pre class="r"><code>nrow(kundenprofile)</code></pre>
+<pre><code>## [1] 5</code></pre>
+<pre class="r"><code>nrow(preise)</code></pre>
+<pre><code>## [1] 10</code></pre>
+<pre class="r"><code>glimpse (einkaeufe)</code></pre>
+<pre><code>## Rows: 9
+## Columns: 4
+## $ kunden_id    &lt;chr&gt; &quot;k1&quot;, &quot;k1&quot;, &quot;k1&quot;, &quot;k2&quot;, &quot;k2&quot;, &quot;k2&quot;, &quot;k2&quot;, &quot;k2&quot;, &quot;k2&quot;
+## $ produkt_name &lt;chr&gt; &quot;Chips&quot;, &quot;Milch&quot;, &quot;Avocado&quot;, &quot;Pfirsich&quot;, &quot;Birne&quot;, &quot;Apfel&quot;…
+## $ einkauf      &lt;dbl&gt; 2.0, 3.0, 1.0, 2.5, 0.5, 2.0, 1.5, 1.0, 4.0
+## $ einheit      &lt;chr&gt; &quot;anzahl&quot;, &quot;anzahl&quot;, &quot;anzahl&quot;, &quot;kg&quot;, &quot;kg&quot;, &quot;kg&quot;, &quot;kg&quot;, &quot;kg…</code></pre>
+<pre class="r"><code>glimpse (kundenprofile)</code></pre>
+<pre><code>## Rows: 5
+## Columns: 10
+## $ kunden_id  &lt;chr&gt; &quot;k1&quot;, &quot;k2&quot;, &quot;k3&quot;, &quot;k4&quot;, &quot;k5&quot;
+## $ email      &lt;chr&gt; &quot;fabienne.colin@example.com&quot;, &quot;carol.dufour@example.com&quot;, &quot;…
+## $ phone      &lt;chr&gt; &quot;079 379 62 05&quot;, &quot;076 430 16 51&quot;, &quot;078 965 74 56&quot;, &quot;077 730…
+## $ vorname    &lt;chr&gt; &quot;Fabienne&quot;, &quot;Carol&quot;, &quot;Silvia&quot;, &quot;Valérie&quot;, &quot;Roger&quot;
+## $ nachname   &lt;chr&gt; &quot;Colin&quot;, &quot;Dufour&quot;, &quot;Dumont&quot;, &quot;Renaud&quot;, &quot;Leclercq&quot;
+## $ wohnort    &lt;chr&gt; &quot;Les Enfers&quot;, &quot;Oberengstringen&quot;, &quot;Hasle (Lu)&quot;, &quot;Koblenz&quot;, &quot;…
+## $ kanton     &lt;chr&gt; &quot;Zug&quot;, &quot;Nidwalden&quot;, &quot;Bern&quot;, &quot;Uri&quot;, &quot;Fribourg&quot;
+## $ plz        &lt;dbl&gt; 3151, 3440, 8975, 7761, 7382
+## $ geburtstag &lt;date&gt; 1956-04-20, 1977-01-06, 1973-10-23, 1963-08-25, 1988-01-03
+## $ alter      &lt;dbl&gt; 65, 44, 48, 58, 33</code></pre>
+<pre class="r"><code>glimpse (preise)</code></pre>
+<pre><code>## Rows: 10
+## Columns: 2
+## $ produkt_name &lt;chr&gt; &quot;Toilettenpapier&quot;, &quot;Chips&quot;, &quot;Blaubeeren&quot;, &quot;Milch&quot;, &quot;Avoca…
+## $ preis        &lt;dbl&gt; 14.3, 3.8, 7.8, 2.2, 3.2, 1.9, 2.6, 4.1, 2.7, 6.5</code></pre>
+<ol start="4" style="list-style-type: decimal">
+<li>Strick das Dokument und dann: git add, commit, push alle Veränderung zurück auf GitHub</li>
 </ol>
 </div>
 <div id="übung-3---daten-zusammenfügen" class="section level2">
