@@ -124,6 +124,8 @@ einkaeufe_preise <- einkaeufe %>%
 
 ```{r}
 
+einkaeufe_kosten <- einkaeufe_preise %>% 
+  mutate(kosten=einkauf*preis)
 
 ```
 
@@ -135,9 +137,9 @@ einkaeufe_preise <- einkaeufe %>%
 ```{r, eval=FALSE}
 
 einkaeufe_kosten_sum <- einkaeufe_kosten %>% 
-  group_by(___) %>% 
-  ___(
-    summe = ___
+  group_by(kunden_id) %>% 
+  summarise(
+    summe = sum(kosten)
   )
 
 ```
@@ -158,21 +160,21 @@ kunden_tab <- einkaeufe_kosten_sum %>%
 
 1. Nutze das Objekt `kunden_tab` und den Pipe-Operator um eine Code-Sequenz zu schreiben welche das Objekt `kunden_tab` mit der Funktion `gt()` verbindet. 
 
-```{r, eval=FALSE}
+```{r}
 kunden_tab %>% 
   gt()
 ```
 
 2. Nutze das Objekt `kunden_tab` und den Pipe-Operator um eine Code-Sequenz zu schreiben welche das Objekt `kunden_tab` mit der Funktion `datatable()` verbindet.
 
-```{r, eval=FALSE}
+```{r}
 kunden_tab %>% 
   datatable()
 ```
 
 3. Nutze das Objekt `kunden_tab` und den Pipe-Operator um eine Code-Sequenz zu schreiben welche das Objekt `kunden_tab` mit der Funktion `kable()` verbindet.
 
-```{r, eval=FALSE}
+```{r}
 kunden_tab %>% 
   kable()
 ```

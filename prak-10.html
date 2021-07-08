@@ -405,6 +405,8 @@ preise %&gt;%
 <ol style="list-style-type: decimal">
 <li>Starte mit dem Objekt <code>einkauefe_preise</code> und nutze die Funktion <code>mutate()</code> um eine neue Variable mit dem Namen ‘kosten’ zu erstellen. Das Variable soll eine Multiplikation der Spalte ‘einkauf’ mit der Spalte ‘preis’ beinhalten. Speicher das Ergebnis als ein neues Objekt in deiner Arbeitsumgebung (Environment) mit dem Namen <code>einkaeufe_kosten</code>.</li>
 </ol>
+<pre class="r"><code>einkaeufe_kosten &lt;- einkaeufe_preise %&gt;% 
+  mutate(kosten=einkauf*preis)</code></pre>
 </div>
 <div id="übung-5---daten-zusammenfassen-bonus" class="section level2">
 <h2>Übung 5 - Daten zusammenfassen (Bonus)</h2>
@@ -413,9 +415,9 @@ preise %&gt;%
 <li>Setze die Code-chunk Option von ‘eval=FALSE’ auf ‘eval=TRUE’ um den Code beim nächsten Stricken mit auszuführen.</li>
 </ol>
 <pre class="r"><code>einkaeufe_kosten_sum &lt;- einkaeufe_kosten %&gt;% 
-  group_by(___) %&gt;% 
-  ___(
-    summe = ___
+  group_by(kunden_id) %&gt;% 
+  summarise(
+    summe = sum(kosten)
   )</code></pre>
 <ol start="2" style="list-style-type: decimal">
 <li>Starte mit dem Objekt <code>einkaeufe_kosten_sum</code> und nutze die Funktion <code>left_join()</code> um dieses mit dem Objekt <code>kundenprofile</code> zusammenzufügen. Selektiere dann nur die Spalten ‘vorname’, ‘nachname’, ‘summe’ und ‘email’. Speicher das Ergebnis als ein neues Objekt in deiner Arbeitsumgebung (Environment) mit dem Namen <code>kunden_tab</code>.</li>
