@@ -97,7 +97,9 @@ preise %>%
 
 # Kombination 2
 
-# Schreibt hier eure Beispiele
+preise %>% 
+  full_join(einkaeufe) %>% 
+  full_join(kundenprofile)
 
 # Kombination 3
 
@@ -109,6 +111,8 @@ preise %>%
 
 ```{r}
 
+einkaeufe_preise <- einkaeufe %>% 
+  left_join(preise)
 
 ```
 

@@ -365,14 +365,39 @@ preise %&gt;%
 ## 12 Pfirsich          6.5 k2            1   kg</code></pre>
 <pre class="r"><code># Kombination 2
 
-# Schreibt hier eure Beispiele
-
-# Kombination 3
+preise %&gt;% 
+  full_join(einkaeufe) %&gt;% 
+  full_join(kundenprofile)</code></pre>
+<pre><code>## # A tibble: 15 x 14
+##    produkt_name  preis kunden_id einkauf einheit email    phone vorname nachname
+##    &lt;chr&gt;         &lt;dbl&gt; &lt;chr&gt;       &lt;dbl&gt; &lt;chr&gt;   &lt;chr&gt;    &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt;   
+##  1 Toilettenpap…  14.3 &lt;NA&gt;         NA   &lt;NA&gt;    &lt;NA&gt;     &lt;NA&gt;  &lt;NA&gt;    &lt;NA&gt;    
+##  2 Chips           3.8 k1            2   anzahl  fabienn… 079 … Fabien… Colin   
+##  3 Blaubeeren      7.8 &lt;NA&gt;         NA   &lt;NA&gt;    &lt;NA&gt;     &lt;NA&gt;  &lt;NA&gt;    &lt;NA&gt;    
+##  4 Milch           2.2 k1            3   anzahl  fabienn… 079 … Fabien… Colin   
+##  5 Milch           2.2 k2            4   anzahl  carol.d… 076 … Carol   Dufour  
+##  6 Avocado         3.2 k1            1   anzahl  fabienn… 079 … Fabien… Colin   
+##  7 Banane          1.9 &lt;NA&gt;         NA   &lt;NA&gt;    &lt;NA&gt;     &lt;NA&gt;  &lt;NA&gt;    &lt;NA&gt;    
+##  8 Birne           2.6 k2            0.5 kg      carol.d… 076 … Carol   Dufour  
+##  9 Apfel           4.1 k2            2   kg      carol.d… 076 … Carol   Dufour  
+## 10 Tomate          2.7 k2            1.5 kg      carol.d… 076 … Carol   Dufour  
+## 11 Pfirsich        6.5 k2            2.5 kg      carol.d… 076 … Carol   Dufour  
+## 12 Pfirsich        6.5 k2            1   kg      carol.d… 076 … Carol   Dufour  
+## 13 &lt;NA&gt;           NA   k3           NA   &lt;NA&gt;    silvia.… 078 … Silvia  Dumont  
+## 14 &lt;NA&gt;           NA   k4           NA   &lt;NA&gt;    valerie… 077 … Valérie Renaud  
+## 15 &lt;NA&gt;           NA   k5           NA   &lt;NA&gt;    roger.l… 076 … Roger   Leclercq
+## # … with 5 more variables: wohnort &lt;chr&gt;, kanton &lt;chr&gt;, plz &lt;dbl&gt;,
+## #   geburtstag &lt;date&gt;, alter &lt;dbl&gt;</code></pre>
+<pre class="r"><code># Kombination 3
 
 # etc. </code></pre>
 <ol start="2" style="list-style-type: decimal">
-<li><p>Starte mit dem Objekt <code>einkauefe</code> und nutze die Funktion <code>left_join()</code> um dieses mit dem Objekt <code>preise</code> zusammenzufügen. Speicher das Ergebnis als ein neues Objekt in deiner Arbeitsumgebung (Environment) mit dem Namen <code>einkaeufe_preise</code>.</p></li>
-<li><p>Strick das Dokument und dann: git add, commit, push alle Veränderung zurück auf GitHub</p></li>
+<li>Starte mit dem Objekt <code>einkauefe</code> und nutze die Funktion <code>left_join()</code> um dieses mit dem Objekt <code>preise</code> zusammenzufügen. Speicher das Ergebnis als ein neues Objekt in deiner Arbeitsumgebung (Environment) mit dem Namen <code>einkaeufe_preise</code>.</li>
+</ol>
+<pre class="r"><code>einkaeufe_preise &lt;- einkaeufe %&gt;% 
+  left_join(preise)</code></pre>
+<ol start="3" style="list-style-type: decimal">
+<li>Strick das Dokument und dann: git add, commit, push alle Veränderung zurück auf GitHub</li>
 </ol>
 </div>
 <div id="übung-4---neue-variable-erstellen" class="section level2">
